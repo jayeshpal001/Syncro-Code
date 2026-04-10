@@ -51,3 +51,22 @@ export async function submitContact(formData: FormData) {
     };
   }
 }
+
+// src/actions/contact.ts ke end mein add karein
+
+export async function getLeads() {
+  try {
+    await connectToDB();
+    
+    // Sort by latest leads first
+    const leads = await Contact.find({}).sort({ createdAt: -1 });
+    
+    return {
+      success: true,
+      data: JSON.parse(JSON.stringify(leads))
+    };
+  } catch (error) {
+    console.error("Error fetching leads:", error);
+    return { success: false, error: "Failed to fetch leads" };
+  }
+}
