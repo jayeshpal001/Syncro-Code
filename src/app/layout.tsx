@@ -3,8 +3,8 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "../lib/utils";
 import { Navbar } from "../components/ui/Navbar";
+import { Footer } from "../components/ui/Footer";
 
-// Premium modern font load kar rahe hain
 const font = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
@@ -18,16 +18,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark"> 
-      {/* Default dark theme set kiya hai premium agency look ke liye */}
+    <html lang="en" className="dark scroll-smooth"> 
       <body className={cn(
         "min-h-screen bg-black font-sans text-white antialiased selection:bg-blue-600 selection:text-white",
         font.variable
       )}>
-        {/* Yahan Navbar aayega */}
         <Navbar />
-        <main>{children}</main>
-        {/* Yahan Footer aayega */}
+        <main className="relative flex flex-col">{children}</main>
+        <Footer />
       </body>
     </html>
   );
