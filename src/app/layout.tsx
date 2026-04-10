@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { SmoothScroll } from "../components/animations/SmoothScroll";
 import "./globals.css";
 import { cn } from "../lib/utils";
 import { Navbar } from "../components/ui/Navbar";
@@ -41,14 +42,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth"> 
+    <html lang="en" className="dark"> 
       <body className={cn(
         "min-h-screen bg-black font-sans text-white antialiased selection:bg-blue-600 selection:text-white",
         font.variable
       )}>
-        <Navbar />
-        <main className="relative flex flex-col">{children}</main>
-        <Footer />
+        {/* Lenis Smooth Scroll Wrapper */}
+        <SmoothScroll>
+          <Navbar />
+          <main className="relative flex flex-col">{children}</main>
+          <Footer />
+        </SmoothScroll>
+
+        {/* Zero-Lag Vercel Analytics */}
+   
       </body>
     </html>
   );
