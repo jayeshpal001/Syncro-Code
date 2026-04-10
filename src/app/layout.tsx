@@ -9,7 +9,30 @@ const font = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "Syncrocode | Premium IT & Web3 Solutions",
-  description: "Next-generation Web Development, AI Automation, and Cloud Solutions.",
+  description: "Next-generation Web Development, AI Automation, and Cloud Solutions designed to scale your enterprise with 0% lag.",
+  keywords: ["Web Development Indore", "Next.js Agency", "AI Automation", "Cloud Solutions", "MERN Stack Developers", "Jayesh Pal"],
+  openGraph: {
+    title: "Syncrocode | Engineering Digital Masterpieces",
+    description: "Elevating brands with scalable, blazing-fast web applications and intelligent AI solutions.",
+    url: "https://syncrocode.in",
+    siteName: "Syncrocode",
+    images: [
+      {
+        url: "https://syncrocode.in/og-image.png", // Aapko public folder mein ek premium banner image (1200x630px) banakar og-image.png naam se rakhni hogi
+        width: 1200,
+        height: 630,
+        alt: "Syncrocode Premium Agency",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Syncrocode | Enterprise Web Solutions",
+    description: "Next-generation Web Development and AI Automation.",
+    images: ["https://syncrocode.in/og-image.png"],
+  },
 };
 
 export default function RootLayout({

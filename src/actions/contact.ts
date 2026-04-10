@@ -1,20 +1,43 @@
-// src/actions/contact.ts
 "use server";
 
+
+import { connectToDB } from "../lib/mongodb";
+import Contact from "../models/Contact";
 export async function submitContact(formData: FormData) {
-  // Simulate processing time for a smooth UX
-  await new Promise((resolve) => setTimeout(resolve, 1500));
+  try {
+    // 1. Extract data from form
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
 
-  const name = formData.get("name");
-  const email = formData.get("email");
-  const message = formData.get("message");
+    // Basic validation
+    if (!name || !email || !message) {
+      return { success: false, error: "All fields are required." };
+    }
 
-  // Aage chalkar hum is data ko MongoDB mein save karenge
-  console.log("New Lead Received:", { name, email, message });
+    // 2. Connect to MongoDB
+    await connectToDB();
 
-  // Returning success state
-  return { 
-    success: true, 
-    message: "Thank you for reaching out. Our team will contact you shortly." 
-  };
+    // 3. Save to database
+    await Contact.create({
+      name,
+      email,
+      message,
+    });
+
+    console.log(`New Lead Saved: ${email}`);
+
+    // 4. Return success state to frontend
+    return { 
+      success: true, 
+      message: "Thank you for reaching out. Our team will contact you shortly." 
+    };
+
+  } catch (error) {
+    console.error("Database Error:", error);
+    return { 
+      success: false, 
+      error: "Something went wrong. Please try again later." 
+    };
+  }
 }
