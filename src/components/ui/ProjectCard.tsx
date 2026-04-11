@@ -13,14 +13,14 @@ interface ProjectCardProps {
   description: string;
   techStack: string[];
   liveLink: string;
-  githubLink: string;
+//   githubLink: string;
   index: number;
   // THE UPGRADE: Injecting Real Media
   mediaUrl: string;
   mediaType: "video" | "image";
 }
 
-export const ProjectCard = ({ title, description, techStack, liveLink, githubLink, index, mediaUrl, mediaType }: ProjectCardProps) => {
+export const ProjectCard = ({ title, description, techStack, liveLink, index, mediaUrl, mediaType }: ProjectCardProps) => {
   const isEven = index % 2 === 0;
 
   // --- 3D MOUSE TILT LOGIC (Ultra-Premium Physics) ---
@@ -136,14 +136,14 @@ export const ProjectCard = ({ title, description, techStack, liveLink, githubLin
               <ExternalLink size={18} className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
               Live Demo
             </Link>
-            <Link 
+            {/* <Link 
               href={githubLink} 
               target="_blank"
               className="group flex items-center gap-2 rounded-full border border-white/20 bg-transparent px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-white/10 hover:border-white/40"
             >
               <FaGithub size={18} className="transition-transform group-hover:scale-110" />
               Source Code
-            </Link>
+            </Link> */}
           </div>
         </motion.div>
       </motion.div>
