@@ -44,7 +44,7 @@ export const PortfolioSection = () => {
   ];
 
   return (
-    <section id="portfolio" className="relative w-full bg-black py-32 px-4 md:px-8">
+    <section id="portfolio" className="relative w-full bg-black py-15 px-4 md:px-8">
       {/* Ambient background glow for extra wow factor */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-blue-600/20 blur-[100px] rounded-full pointer-events-none"></div>
 

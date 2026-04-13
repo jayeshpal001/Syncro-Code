@@ -70,7 +70,7 @@ export const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="relative w-full bg-black py-32 px-4 md:px-8">
+    <section id="services" className="relative w-full bg-black py-20 px-4 md:px-8">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-20 flex flex-col items-center text-center">

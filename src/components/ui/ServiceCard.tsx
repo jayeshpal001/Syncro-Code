@@ -14,10 +14,10 @@ interface ServiceCardProps {
 // <-- Added : Variants type definition here
 export const cardVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }
   }
 };
 
@@ -32,7 +32,7 @@ export const ServiceCard = ({ title, description, icon, className }: ServiceCard
       )}
     >
       <div className="absolute -inset-px bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-purple-500/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-      
+
       <div className="relative z-10 flex flex-col items-start text-left">
         <div className="mb-6 rounded-lg bg-blue-500/10 p-3 text-blue-400 ring-1 ring-blue-500/20">
           {icon}

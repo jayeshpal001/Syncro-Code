@@ -22,7 +22,7 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="relative w-full bg-black py-32 px-4 md:px-8">
+    <section id="contact" className="relative w-full bg-black py-15 px-4 md:px-8">
       <div className="mx-auto max-w-4xl">
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
