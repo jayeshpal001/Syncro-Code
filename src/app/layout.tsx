@@ -5,6 +5,8 @@ import "./globals.css";
 import { cn } from "../lib/utils";
 import { Navbar } from "../components/ui/Navbar";
 import { Footer } from "../components/ui/Footer";
+import { FloatingContact } from "../components/ui/FloatingContact";
+import { SmartCursor } from "../components/ui/SmartCursor";
 
 const font = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -47,11 +49,13 @@ export default function RootLayout({
         "min-h-screen bg-black font-sans text-white antialiased selection:bg-blue-600 selection:text-white",
         font.variable
       )}>
+        <SmartCursor />
         {/* Lenis Smooth Scroll Wrapper */}
         <SmoothScroll>
           <Navbar />
           <main className="relative flex flex-col">{children}</main>
           <Footer />
+          <FloatingContact/>
         </SmoothScroll>
 
         {/* Zero-Lag Vercel Analytics */}

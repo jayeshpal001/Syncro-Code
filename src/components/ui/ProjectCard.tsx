@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { cn } from "@/src/lib/utils";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ExternalLink } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
+// import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -15,12 +15,12 @@ interface ProjectCardProps {
   liveLink: string;
 //   githubLink: string;
   index: number;
-  // THE UPGRADE: Injecting Real Media
   mediaUrl: string;
   mediaType: "video" | "image";
+  results: { metric: string; label: string }[];
 }
 
-export const ProjectCard = ({ title, description, techStack, liveLink, index, mediaUrl, mediaType }: ProjectCardProps) => {
+export const ProjectCard = ({ title, description, techStack, liveLink, index, mediaUrl, mediaType, results }: ProjectCardProps) => {
   const isEven = index % 2 === 0;
 
   // --- 3D MOUSE TILT LOGIC (Ultra-Premium Physics) ---
@@ -115,7 +115,22 @@ export const ProjectCard = ({ title, description, techStack, liveLink, index, me
           style={{ transform: "translateZ(30px)" }} // Pushes text forward, but less than the video
         >
           <h3 className="mb-4 text-4xl font-black text-white tracking-tight drop-shadow-md">{title}</h3>
-          <p className="mb-8 text-lg text-gray-400 leading-relaxed font-medium">{description}</p>
+          <p className="mb-6 text-lg text-gray-400 leading-relaxed font-medium">{description}</p>
+
+          {/* 🔥 THE IMPACT METRICS (RESULTS) 🔥 */}
+          {results && results.length > 0 && (
+            <div className="mb-8 grid grid-cols-2 gap-4" style={{ transform: "translateZ(10px)" }}>
+              {results.map((result, i) => (
+                <div 
+                  key={i} 
+                  className="flex flex-col justify-center rounded-2xl border border-blue-500/20 bg-blue-500/5 p-4 backdrop-blur-sm transition-all hover:bg-blue-500/10 hover:border-blue-500/40"
+                >
+                  <span className="text-3xl font-black text-white">{result.metric}</span>
+                  <span className="text-sm font-semibold text-blue-400 mt-1">{result.label}</span>
+                </div>
+              ))}
+            </div>
+          )}
           
           {/* Tech Stack Tags */}
           <div className="mb-10 flex flex-wrap gap-3">

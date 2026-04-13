@@ -9,37 +9,52 @@ export const PortfolioSection = () => {
       description: "A fully deployed, high-performance web platform focused on a seamless user experience. Engineered for scale with optimized backend logic and a highly responsive interactive UI.",
       techStack: ["React", "Node.js", "Express", "MongoDB"],
       liveLink: "https://kalakaarventures.in",
-    //   githubLink: "https://github.com/jayeshpal001",
-    //   // Add your video here later (e.g., "/projects/kalakaar.mp4") and change mediaType to "video"
+      // githubLink: "https://github.com/jayeshpal001",
       mediaUrl: "/projects/kalakaarventures.mp4", 
       mediaType: "video",
+      results: [
+        { metric: "2x", label: "User Retention" },
+        { metric: "100/100", label: "Lighthouse Score" }
+      ]
     },
     {
       title: "Syncro Code",
       description: "A production-ready web application built with clean architectural patterns. Designed to handle robust data flow while maintaining blazing-fast frontend performance.",
       techStack: ["MERN Stack", "Redux Toolkit", "Tailwind CSS"],
       liveLink: "https://syncrocode.in",
-    //   githubLink: "https://github.com/jayeshpal001", 
+      // githubLink: "https://github.com/jayeshpal001", 
       mediaUrl: "/projects/syncrocode.mp4",
       mediaType: "video",
+      results: [
+        { metric: "0%", label: "Lag Architecture" },
+        { metric: "40%", label: "Cost Reduced" }
+      ]
     },
     {
       title: "ShareMate (Gang App)",
       description: "A robust community social coordination platform designed for seamless group interactions. Engineered with a unified architecture using Next.js for both frontend and backend, ensuring blazing-fast performance and SEO optimization.",
       techStack: ["Next.js", "MongoDB", "Tailwind CSS", "TypeScript"],
       liveLink: "https://gang-app-demo.syncrocode.in",
-    //   githubLink: "https://github.com/jayeshpal001/gang-app",
+      // githubLink: "https://github.com/jayeshpal001/gang-app",
       mediaUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop",
       mediaType: "image",
+      results: [
+        { metric: "3x", label: "Faster Load Time" },
+        { metric: "Unified", label: "App Architecture" }
+      ]
     },
     {
       title: "Role-Based Hospital App",
       description: "An end-to-end healthcare appointment system featuring complex role-based access control (RBAC) for doctors, patients, and admins. Ensures secure data handling and efficient scheduling.",
       techStack: ["MERN Stack", "JWT Auth", "Redux Toolkit"],
       liveLink: "https://hospital-appointment-system-pi.vercel.app",
-    //   githubLink: "https://github.com/jayeshpal001/Hospital-Appointment-System.git",
+      // githubLink: "https://github.com/jayeshpal001/Hospital-Appointment-System.git",
       mediaUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
       mediaType: "image",
+      results: [
+        { metric: "60%", label: "Faster Bookings" },
+        { metric: "Zero", label: "Data Breaches" }
+      ]
     }
   ];
 
@@ -69,10 +84,11 @@ export const PortfolioSection = () => {
               description={project.description}
               techStack={project.techStack}
               liveLink={project.liveLink}
-            //   githubLink={project.githubLink}
-              // The new props passed down to the card:
+              // githubLink={project.githubLink}
               mediaUrl={project.mediaUrl}
               mediaType={project.mediaType as "video" | "image"}
+   
+              results={project.results}
             />
           ))}
         </div>
