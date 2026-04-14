@@ -20,7 +20,7 @@ export const FloatingContact = () => {
             className="flex flex-col gap-3 rounded-[2rem] border border-white/10 bg-black/60 p-4 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
             {/* Calendly Booking Action */}
-            <Link 
+            {/* <Link 
               href="https://calendly.com/YOUR_LINK" // Yahan apna Calendly link daalein
               target="_blank"
               className="group flex items-center gap-4 rounded-2xl bg-white/5 pr-6 p-2 text-sm font-semibold text-white transition-all hover:bg-white/10 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]"
@@ -32,11 +32,11 @@ export const FloatingContact = () => {
                 <span className="block text-xs font-medium text-gray-400">Free Consultation</span>
                 <span className="block">Book Strategy Call</span>
               </div>
-            </Link>
+            </Link> */}
 
             {/* WhatsApp Direct Action */}
             <Link 
-              href="https://wa.me/919876543210" // Yahan apna number daalein (country code ke sath)
+              href="https://wa.me/919179898569" // Yahan apna number daalein (country code ke sath)
               target="_blank"
               className="group flex items-center gap-4 rounded-2xl bg-white/5 pr-6 p-2 text-sm font-semibold text-white transition-all hover:bg-white/10 hover:shadow-[0_0_20px_rgba(34,197,94,0.2)]"
             >

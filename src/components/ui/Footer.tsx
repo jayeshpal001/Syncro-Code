@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { ImLinkedin } from "react-icons/im";
 import { BsTwitterX } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -23,15 +24,15 @@ export const Footer = () => {
               Engineered for performance. We build next-generation scalable web applications, enterprise AI solutions, and robust cloud architectures.
             </p>
             <div className="flex gap-4">
-              <Link href="#" className="rounded-full bg-white/5 p-2 text-gray-400 transition-colors hover:bg-white/10 hover:text-white hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+              <Link href="https://www.linkedin.com/in/syncro-code-07b253403/" className="rounded-full bg-white/5 p-2 text-gray-400 transition-colors hover:bg-white/10 hover:text-white hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
                 <ImLinkedin size={20} />
               </Link>
-              <Link href="#" className="rounded-full bg-white/5 p-2 text-gray-400 transition-colors hover:bg-white/10 hover:text-white hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
-                <BsTwitterX size={20} />
+              <Link href="https://www.instagram.com/syncrocode" className="rounded-full bg-white/5 p-2 text-gray-400 transition-colors hover:bg-white/10 hover:text-white hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                <BsInstagram size={20} />
               </Link>
-              <Link href="#" className="rounded-full bg-white/5 p-2 text-gray-400 transition-colors hover:bg-white/10 hover:text-white hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+              {/* <Link href="#" className="rounded-full bg-white/5 p-2 text-gray-400 transition-colors hover:bg-white/10 hover:text-white hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
                 <FaGithub size={20} />
-              </Link>
+              </Link> */}
             </div>
           </div>
 
