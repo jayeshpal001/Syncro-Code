@@ -39,7 +39,8 @@ export const ProjectCard = ({ title, description, techStack, liveLink, index, me
   const glareY = useTransform(mouseYSpring, [0, 1], ["-100%", "100%"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
+    if (!ref.current || window.innerWidth < 768) return; 
+
     const rect = ref.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
@@ -72,10 +73,10 @@ export const ProjectCard = ({ title, description, techStack, liveLink, index, me
           isEven ? "lg:flex-row" : "lg:flex-row-reverse"
         )}
       >
-        {/* The Glare (Light Reflection) */}
+        {/* The Glare (Light Reflection) - 🔥 HIDDEN ON MOBILE (md:block) 🔥 */}
         <motion.div 
           style={{ x: glareX, y: glareY, transform: "translateZ(40px)" }}
-          className="absolute inset-0 z-10 w-[200%] h-[200%] bg-gradient-to-tr from-transparent via-white-[0.15] to-transparent blur-3xl pointer-events-none opacity-50"
+          className="hidden md:block absolute inset-0 z-10 w-[200%] h-[200%] bg-gradient-to-tr from-transparent via-white-[0.15] to-transparent blur-3xl pointer-events-none opacity-50"
         />
 
         {/* --- LEFT: REAL MEDIA CONTAINER (Translates Out in 3D Space) --- */}

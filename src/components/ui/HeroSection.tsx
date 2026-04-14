@@ -26,7 +26,8 @@ export const HeroSection = () => {
 
   return (
     <section 
-      ref={containerRef} 
+      ref={containerRef}
+      id="hero" 
       className="relative flex h-[120vh] w-full items-start justify-center overflow-hidden bg-black pt-32 md:pt-40"
     >
       {/* 3D Background with Parallax */}

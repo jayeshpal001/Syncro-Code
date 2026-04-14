@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactLenis } from "@studio-freight/react-lenis";
+import { ReactLenis } from 'lenis/react'; 
 import { ReactNode } from "react";
 
 export const SmoothScroll = ({ children }: { children: ReactNode }) => {
@@ -11,9 +11,12 @@ export const SmoothScroll = ({ children }: { children: ReactNode }) => {
         lerp: 0.08, // Scroll ki smoothness
         duration: 1.5, // Momentum
         smoothWheel: true,
+        // 🔥 MOBILE OPTIMIZATION: Phone par native swipe chalne do, hijack mat karo
+        syncTouch: false, 
       }}
     >
-      {children as any}
+      {/* Ab 'as any' likhne ki zaroorat nahi hai */}
+      {children}
     </ReactLenis>
   );
 };
